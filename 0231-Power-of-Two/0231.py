@@ -17,3 +17,7 @@ class Solution:
         # 7 = 0111
         # 8 & 7 = 0000
         return n > 0 and (n & (n - 1)) == 0
+    
+    def isPowerOfTwo2(self, n: int) -> bool:
+        max_n = 2 ** 30
+        return n > 0 and max_n % n == 0
