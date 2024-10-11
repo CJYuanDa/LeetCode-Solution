@@ -25,12 +25,17 @@ class Solution:
         ans = [-1] * len(nums1)
         stack = []
 
-        for num in nums2:
-            while stack and num > stack[-1]:
-                index = map1[stack.pop()]
-                ans[index] = num
+        # 1. iterate nums2
+        # 2. if num in nums1 add to stack
+        # 3. if num > stack[-1], means num > all the value in the stack
+        # 4. change the value of relative index
 
-            if num in map1:
+        for num in nums2: # 1
+            while stack and num > stack[-1]: # 3
+                index = map1[stack.pop()]
+                ans[index] = num # 4
+
+            if num in map1: # 2
                 stack.append(num)
 
         return ans
