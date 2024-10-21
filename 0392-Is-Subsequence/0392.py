@@ -1,16 +1,19 @@
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-        i = 0
-        j = 0
+        index_s = 0
+        index_t = 0
 
-        while i < len(s):
-            if j > len(t) - 1:
+        while index_s < len(s):
+            # has checked all character of t
+            if index_t > len(t) - 1:
                 return False
-
-            if s[i] == t[j]:
-                i += 1
-                j += 1
+            
+            # if match, increase both index
+            if s[index_s] == t[index_t]:
+                index_s += 1
+                index_t += 1
+            # if not match, increase index of t
             else:
-                j += 1
+                index_t += 1
         
         return True
