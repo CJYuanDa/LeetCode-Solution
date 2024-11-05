@@ -2,7 +2,7 @@ class Solution {
     public int[] plusOne(int[] digits) {
         int idx = digits.length - 1;
 
-        // iterate from left to right
+        // iterate from right to left
         for (int i = idx; i >= 0; i--) {
             if (digits[i] < 9) {
                 digits[i]++;
